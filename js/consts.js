@@ -13,5 +13,4 @@
     ];
 
     root.SHRI_ISLANDS = SHRI_ISLANDS;
-    console.log(root.SHRI_ISLANDS)
 })(this);
