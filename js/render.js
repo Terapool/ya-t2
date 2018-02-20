@@ -10,12 +10,16 @@
      * @param {string} [text] текст
      * @returns {HTMLElement} HTML элемент
      */
-    function element(type, className, text) {
+    function element(type, className, text, col, row) {
         var elem = document.createElement(type);
         elem.className = className;
 
         if (text) {
             elem.innerText = text;
+        }
+        
+        if (col !== undefined && row !== undefined) {
+            elem.id = row + '-' + col;
         }
 
         return elem;
@@ -37,7 +41,7 @@
             x,
             y;
 
-        containerElem.appendChild(element('div', 'map__res', 'Count: ' + Number(count)));
+       //containerElem.appendChild(element('div', 'map__res', 'Count: ' + Number(count)));
 
         for (y = 0; y < map.length; y++) {
             row = map[y];
@@ -60,7 +64,7 @@
                 }
 
                 rowElem.appendChild(
-                    element('div', 'map__cell' + (type ? ' map__cell_' + type : ''))
+                    element('div', 'map__cell' + ' map__cell_' + type, ' ', x, y)
                 );
             }
 

@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Trebuchet MS, sans-serif;
+    background: #FFF;
+}
+h2 {
+    
+    color: #4A7681;
+    text-align: center;
+    font-size: 26px;
+    font-style: italic;
+    margin: 15px auto;
+    
+}
+.section-maps {
+        display: flex;
+}
+
+.section-maps-editor {
+    width: 50%;
+    min-width: 430px;
+    margin: 0px 15px 0px 30px;
+    
+
+}
+.section-maps-counter {
+    width: 50%;
+    min-width: 430px;
+    margin: 0px 30px 0px 15px;
+  
+}
+.panel {
+    width: 100%;
+    background: linear-gradient(to top, #4A7681, #96BFCD); 
+}
+.panel-controls {
+    display: flex;
+    margin: 15px;
+    height: 40px;
+    padding-bottom: 
+
+}
+.panel-controls-item {
+    flex-grow: 1;
+    text-align: center;
+    line-height: 40px;
+}
+.panel-controls-item-label {
+    color: #333333;
+    font-style: italic;
+    font-size: 18px;
+}
+.panel-controls-item-input {
+    height: 20px;
+    text-align: center;
+    background: linear-gradient(to top, #D4F0FC, #F6FCFE);
+    font-size: 16px;
+    width: 70px;
+}
+
+
+.panel-controls-item-button {
+    border: 1px solid #CE2200;
+    background: linear-gradient(to top, #B92500, #FABEAC);
+
+    color: #FFF;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+.panel-map {
+    margin: 15px;
+    height: 420px;
+    background: #A1CEEB url(../img/tropics.jpg) top left no-repeat; 
+    overflow: auto;
+}
+#buildArea div.map__cell {
+    cursor: pointer;
+    
+}
+
+.panel-area {
+    margin: 15px;
+    height: 420px;
+    background: linear-gradient(to top, #C2D6FF, #FFFFFF);
+    overflow: auto;
+
+}
+
+.section-console {
+    background: linear-gradient(to top, #563B3B, #AD8888); 
+    margin: 0 30px 30px 30px;
+    
+}
+
+.console {
+    margin: 15px;
+    color: #FFFFFF;
+    font-size: 18px;
+    overflow: auto;
+    height: 250px;
+    font-family: monospace;
+    line-height: 28px;
+        
+}
+.console i {
+    color: #FFFF00;
+    
+}

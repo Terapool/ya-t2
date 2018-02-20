@@ -1,17 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Острова</title>
     <meta name="description" content="shri islands">
-
+    <link rel="stylesheet" href="css/new-design.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="outer"></div>
+    <div class="section-maps">
+        <div class="section-maps-editor">
+            <h2 class="section-maps-editor__title">Построить карту</h2> 
+            <div class="panel">
+                <div class="panel-controls">
+                  <div class="panel-controls-item">
+                      <span class="panel-controls-item-label">Столбцы:</span> <input type="number" class="panel-controls-item-input" value="10" id="colsInput">
+                  </div>
+                  <div class="panel-controls-item"><span class="panel-controls-item-label">Ряды:</span> <input type="number" class="panel-controls-item-input" value="10" id ="rowsInput">
+                  </div>
+                  <div class="panel-controls-item">
+                      <button class="panel-controls-item-button" id="buttonBuild">Построить</button>
+                  </div>
+              </div>
+              <div class="panel-map outer" id="buildArea">
+
+              </div>    
+            </div>
+        </div>
+        <div class="section-maps-counter">
+          <h2 class="section-maps-counter__title">Подсчитать острова</h2>  
+                <div class="panel">
+                    <div class="panel-controls">
+                        <div class="panel-controls-item"><button class="panel-controls-item-button">Быстро</button>
+                        </div> 
+                        <div class="panel-controls-item"><button class="panel-controls-item-button">Подробно</button>
+                        </div> 
+                    </div>
+                    <div class="panel-area">
+                        
+                    </div>
+
+               
+                </div>
+       </div>
+    </div>
+       <div class="section-console">
+       <div class="console" id="myConsole">
+       </div>
+       
+   </div>
+    
+        
     <script src="js/consts.js"></script>
-   <script src="js/render.js"></script>
+    <script src="js/render.js"></script>
     <script src="js/solution.js"></script>
+    <script src="js/visualizeSolution.js"></script>
     <script src="js/index.js"></script>
+    
 </body>
 </html>
