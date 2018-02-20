@@ -55,6 +55,13 @@
                         --islandCount; //..то скорректируем счетчик. Уменьшим количество островов на 1.
                         minIslandVal = Math.min(neighborList[mapClone[i][j]], neighborList[mapClone[i-1][j]]);
                         maxIslandVal = Math.max(neighborList[mapClone[i][j]], neighborList[mapClone[i-1][j]]);
+                        
+                        for(var k=0; k < neighborList.length; k++) {
+                            if (neighborList[k] == maxIslandVal) {
+                                neighborList[k] = minIslandVal;
+                            }
+                        }
+                        
                         neighborList[maxIslandVal] = minIslandVal; // номер объединенного острова будет наименьшим из доступных
                     }
                 } else if (mapClone[i][j] && waterBound) {//..если клетка остров, а предыдущая была водой
@@ -63,8 +70,9 @@
                     waterBound = true; 
                 }
             }
+           
         }
-        
+
         return islandCount;
     }
 

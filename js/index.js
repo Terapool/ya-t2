@@ -7,6 +7,8 @@
     var map = root.SHRI_ISLANDS.MAP;
     var count = root.SHRI_ISLANDS.solution(map);
     var buildMap = root.SHRI_ISLANDS.buildMap;
+    root.SHRI_ISLANDS.visualizationMode = false; // Флаг для визуальной демонстрации работы алгоритма
+    root.SHRI_ISLANDS.myCon = myCon;
 
     
     
@@ -16,19 +18,31 @@
     var rowsInput = document.getElementById('rowsInput');
     var buttonBuild = document.getElementById('buttonBuild');
     var buildArea = document.getElementById('buildArea');
+    var visualizationArea = document.getElementById('visualizationArea');
+    
     var myConsole = document.getElementById("myConsole");
     
+    var buttonSolution = document.getElementById("buttonSolution");
+    var buttonVisualizeSolution = document.getElementById("buttonVisualizeSolution");
     
     
     
     
-    //Section - map
+    //Page initialisation
     
-    drawMapInBuidArea(map);
+    drawMapInBuidArea(map); // Строим карту по умолчанию
     myCon('Построена карта по умолчанию. Кликните по сегментам для редактирования или постройте новую.');
+    root.SHRI_ISLANDS.customMap = map;
+    
+    
+    
     buttonBuild.addEventListener("click", buttonBuildClick, false);
     buildArea.addEventListener("click", mapCellClick, false);
-    root.SHRI_ISLANDS.customMap = map;
+    buttonSolution.addEventListener("click", buttonSolutionClick, false);
+    buttonVisualizeSolution.addEventListener("click", buttonVisualizeSolutionClick, false);
+
+    
+    
     
     
     function mapCellClick(e){
@@ -69,7 +83,12 @@
     function drawMapInBuidArea(mapToBuild) {
         buildArea.innerHTML = "";
         buildArea.appendChild(root.SHRI_ISLANDS.render(mapToBuild, count));
-
+        
+    }
+    
+    function drawMapInVisualizationArea(mapToBuild) {
+        visualizationArea.innerHTML = "";
+        visualizationArea.appendChild(root.SHRI_ISLANDS.render(mapToBuild, count));
         
     }
     
@@ -77,6 +96,23 @@
         
         colsInput.value = colsInput.value > 0 ? colsInput.value : 2;
         rowsInput.value = rowsInput.value > 0 ? rowsInput.value : 2;
+    }
+    
+    function buttonSolutionClick () {
+        var islandsNumber = root.SHRI_ISLANDS.solution(root.SHRI_ISLANDS.customMap);
+        myCon('На текущей карте ' + islandsNumber + ' островов');
+        
+    }
+    function buttonVisualizeSolutionClick () {
+        root.SHRI_ISLANDS.visualizationMode = true;
+
+        drawMapInVisualizationArea(root.SHRI_ISLANDS.customMap); 
+        myCon("Начало визуального подсчета островов по карте");
+        
+        root.SHRI_ISLANDS.visualizeSolution(root.SHRI_ISLANDS.customMap);
+        
+        root.SHRI_ISLANDS.visualizationMode = false;
+        
     }
     
     
@@ -107,11 +143,6 @@
         
     }
     
-    
-    
-    
-    
-    
-    
+
     
 })(this);

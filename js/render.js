@@ -18,8 +18,11 @@
             elem.innerText = text;
         }
         
-        if (col !== undefined && row !== undefined) {
+        if (col !== undefined && row !== undefined && !root.SHRI_ISLANDS.visualizationMode) { // ставим id для ячеек карты
             elem.id = row + '-' + col;
+        }
+        if (col !== undefined && row !== undefined && root.SHRI_ISLANDS.visualizationMode) { // ставим id для ячеек карты
+            elem.id = 'vis_' + row + '-' + col;
         }
 
         return elem;
